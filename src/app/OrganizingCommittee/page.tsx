@@ -13,7 +13,7 @@ const OrganizingCommiteeDetails = [
 const OrganizingCommitee = () => {
   return (
     <div className="flex flex-col items-center p-4 md:p-12">
-      <h1 className="text-2xl md:text-4xl font-bold">Technical Committee</h1>
+      <h1 className="text-2xl md:text-4xl font-bold">Organizing Committee</h1>
       <div className="flex flex-col my-5">
         <div className="flex flex-wrap justify-center my-5 mx-auto">
           <div className="mx-2 md:mx-5 my-2 md:my-0">

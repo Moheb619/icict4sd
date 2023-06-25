@@ -169,7 +169,7 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end flex flex-col items-center md:flex-row md:items-center">
+      <div className="navbar-end flex flex-col items-center md:flex-row md:items-center pl-[4.8rem]">
         <Link href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"} className="btn bg-red-600 text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto">
           Submit Paper
         </Link>
