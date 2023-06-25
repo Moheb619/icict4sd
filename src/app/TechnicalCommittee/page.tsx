@@ -15,30 +15,30 @@ const TechnicalCommitteeDetails = [
 ];
 const TechnicalCommittee = () => {
   return (
-    <div className="flex flex-col items-center p-12">
-      <h1 className="text-4xl font-bold">Technical Committee</h1>
+    <div className="flex flex-col items-center p-4 md:p-12">
+      <h1 className="text-2xl md:text-4xl font-bold">Technical Committee</h1>
       <div className="flex flex-col my-5">
-        <div className="flex my-5 mx-auto">
-          <div className="mx-5">
+        <div className="flex flex-wrap justify-center my-5 mx-auto">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={TechnicalCommitteeDetails[0].name} bio={TechnicalCommitteeDetails[0].bio} url={TechnicalCommitteeDetails[0].url} />
           </div>
         </div>
-        <div className="flex my-5 mx-auto">
-          <div className="mx-5">
+        <div className="flex flex-wrap justify-center my-5 mx-auto">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={TechnicalCommitteeDetails[1].name} bio={TechnicalCommitteeDetails[1].bio} url={TechnicalCommitteeDetails[1].url} />
           </div>
-          <div className="mx-5">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={TechnicalCommitteeDetails[2].name} bio={TechnicalCommitteeDetails[2].bio} url={TechnicalCommitteeDetails[2].url} />
           </div>
         </div>
-        <div className="flex my-5 mx-auto">
-          <div className="mx-5">
+        <div className="flex flex-wrap justify-center my-5 mx-auto">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={TechnicalCommitteeDetails[3].name} bio={TechnicalCommitteeDetails[3].bio} url={TechnicalCommitteeDetails[3].url} />
           </div>
-          <div className="mx-5">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={TechnicalCommitteeDetails[4].name} bio={TechnicalCommitteeDetails[4].bio} url={TechnicalCommitteeDetails[4].url} />
           </div>
-          <div className="mx-5">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={TechnicalCommitteeDetails[5].name} bio={TechnicalCommitteeDetails[5].bio} url={TechnicalCommitteeDetails[5].url} />
           </div>
         </div>

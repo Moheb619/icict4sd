@@ -19,7 +19,7 @@ const EventVenue = () => {
               ></iframe>
             </div>
             <div className="w-full md:w-1/2 relative">
-              <div className="absolute text-white font-bold text-3xl w-[90%] text-center top-[40%] z-10">Bangladesh University Of Professionals</div>
+              <div className="absolute text-white font-bold  md:text-3xl w-[90%] text-center top-[40%] z-10">Bangladesh University Of Professionals</div>
               <div className="absolute bg-[#060C22CC] h-full w-full"></div>
               <Image src={venue0} alt="venue0" />
             </div>

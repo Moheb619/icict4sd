@@ -10,12 +10,12 @@ const ConferenceSteeringCommitteeDetails = [
 ];
 const ConferenceSteeringCommittee = () => {
   return (
-    <div className="p-14 flex flex-col items-center">
-      <h1 className="text-4xl font-bold">Conference Steering Committee</h1>
-      <div className="flex my-10">
+    <div className="p-4 md:p-14 flex flex-col items-center">
+      <h1 className="text-2xl md:text-4xl font-bold">Conference Steering Committee</h1>
+      <div className="flex flex-wrap justify-center mt-5 md:mt-10">
         {ConferenceSteeringCommitteeDetails.map((member, index) => {
           return (
-            <div key={member.name} className="mx-5">
+            <div key={member.name} className="mx-2 md:mx-5 my-2 md:my-0">
               <ImageCard name={member.name} bio={member.bio} url={member.url} />
             </div>
           );

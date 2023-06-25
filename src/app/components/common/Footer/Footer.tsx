@@ -5,19 +5,19 @@ import bupLogo from "public/img/buplogo.png";
 const Footer = () => {
   return (
     <>
-      <footer className="footer p-10 bg-base-200 text-base-content flex justify-between bg-gray-900 text-white">
-        <div className="w-2/3">
-          <p className="text-4xl text-green-900 font-bold" style={{ textShadow: "1px 1px black" }}>
+      <footer className="footer p-4 md:p-10 bg-base-200 text-base-content flex flex-col md:flex-row justify-between bg-gray-900 text-white">
+        <div className="w-full md:w-2/3">
+          <p className="text-xl md:text-4xl text-green-900 font-bold" style={{ textShadow: "1px 1px black" }}>
             ICICT4SD
           </p>
-          <p className="w-[90%]">
+          <p className="w-full md:w-[90%] mt-4 md:mt-0">
             Bangladesh University of Professionals (BUP) is a unique public university administered by the Armed Forces upholding the motto &quot;Excellence Through Knowledge&quot;. BUP will host the
             2nd International Conference on Information and Communication Technology for Sustainable Development (ICICT4SD) on 14-16 September, 2023 at Bangladesh University of Professionals, Dhaka to
             attain the vision of Digital Bangladesh.
           </p>
         </div>
-        <div className="w-1/3">
-          <p className="text-2xl underline underline-offset-8">Contact</p>
+        <div className="w-full md:w-1/3 mt-4 md:mt-0">
+          <p className="text-lg md:text-2xl underline underline-offset-8">Contact</p>
           <p>
             Bangladesh University of Professionals <br />
             Mirpur Cantonment <br />
@@ -26,6 +26,7 @@ const Footer = () => {
           </p>
         </div>
       </footer>
+
       <footer className="footer px-10 py-4 border-t bg-black text-white text-base-content border-base-300">
         <div className="items-center grid-flow-col">
           <Image src={bupLogo} alt="logo" className="h-10 w-10" />

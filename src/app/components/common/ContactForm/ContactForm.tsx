@@ -17,7 +17,7 @@ const ContactForm = () => {
             </p>
           </div>
         </div>
-        <Image src={bupLogo} alt="Bup Logo" className="p-6 h-[10rem] w-[35%]" />
+        <Image src={bupLogo} alt="Bup Logo" className="p-6 h-[6rem] mx-auto md:mx-0 w-fit md:h-[10rem] md:w-[35%]" />
       </div>
       <form className="space-y-6">
         <div>

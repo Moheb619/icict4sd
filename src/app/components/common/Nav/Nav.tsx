@@ -19,12 +19,12 @@ const Nav = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </label>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72 text-black lg:hidden">
             <li>
               <Link href={"/"}>Home</Link>
             </li>
             <li>
-              <Link href={"/#about"}>About</Link>
+              <Link href={"/#description"}>About</Link>
             </li>
             <li>
               <Link href={"/#speakers"}>Speakers</Link>
@@ -34,7 +34,7 @@ const Nav = () => {
             </li>
             <li>
               <a>Committee</a>
-              <ul className="p-2">
+              <ul className="p-2 lg:hidden">
                 <li>
                   <Link href={"/ConferenceSteeringCommittee"}>Conference Steering Committee</Link>
                 </li>
@@ -57,7 +57,7 @@ const Nav = () => {
             </li>
             <li>
               <a>Authors</a>
-              <ul className="p-2">
+              <ul className="p-2 lg:hidden">
                 <li>
                   <Link href={"/CallForPapers"}>Call For Papers</Link>
                 </li>
@@ -83,6 +83,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
+
         <a className="btn btn-ghost normal-case text-xl">ICICT4SD</a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -168,8 +169,8 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <Link href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"} className="btn bg-red-600 text-white hover:scale-105">
+      <div className="navbar-end flex flex-col items-center md:flex-row md:items-center">
+        <Link href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"} className="btn bg-red-600 text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto">
           Submit Paper
         </Link>
       </div>

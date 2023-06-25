@@ -17,12 +17,12 @@ const webmasterDetails = [
 
 const Webmaster = () => {
   return (
-    <div className="flex flex-col items-center p-12">
-      <h1 className="text-4xl font-bold mb-10">Webmaster</h1>
-      <div className="flex flex-wrap">
+    <div className="flex flex-col items-center p-4 md:p-12">
+      <h1 className="text-2xl md:text-4xl font-bold mb-6 md:mb-10">Webmaster</h1>
+      <div className="flex flex-wrap justify-center">
         {webmasterDetails.map((member, index) => {
           return (
-            <div key={member.name} className="mx-5">
+            <div key={member.name} className="mx-2 md:mx-5 my-2 md:my-4">
               <ImageCard name={member.name} bio={member.bio} url={member.url} />
             </div>
           );

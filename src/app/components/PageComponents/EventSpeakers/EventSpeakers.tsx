@@ -9,14 +9,14 @@ const keynoteSpeakers = [
 
 const EventSpeakers = () => {
   return (
-    <section id="speakers" className="flex items-center flex-col p-14">
-      <h2 className="text-4xl font-bold text-center my-2">Event Speakers</h2>
+    <section id="speakers" className="flex items-center flex-col p-4 md:p-14">
+      <h2 className="text-2xl md:text-4xl font-bold text-center my-2">Event Speakers</h2>
       <div>
-        <h3 className="text-3xl text-center my-2">Keynote Speakers</h3>
-        <div className="my-5 flex">
+        <h3 className="text-xl md:text-3xl text-center my-2">Keynote Speakers</h3>
+        <div className="my-5 flex flex-wrap justify-center">
           {keynoteSpeakers.map((speaker, index) => {
             return (
-              <div key={speaker.name} className="mx-5">
+              <div key={speaker.name} className="mx-2 md:mx-5 my-2 md:my-0">
                 <ImageCard name={speaker.name} bio={speaker.bio} url={speaker.url} />
               </div>
             );
@@ -24,16 +24,16 @@ const EventSpeakers = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-3xl text-center my-2">Speakers</h3>
-        <div className="my-5 flex">
-          <div className="mx-5">
+        <h3 className="text-xl md:text-3xl text-center my-2">Speakers</h3>
+        <div className="my-5 flex flex-wrap justify-center">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={""} bio={""} url={dummyImages} />
           </div>
-          <div className="mx-5">
+          <div className="mx-2 md:mx-5 my-2 md:my-0">
             <ImageCard name={""} bio={""} url={dummyImages} />
           </div>
         </div>
-        <p className="text-center text-[#9195a2] italic text-[1.2rem]">Yet To Be Announced</p>
+        <p className="text-center text-gray-500 italic text-base md:text-lg">Yet To Be Announced</p>
       </div>
     </section>
   );
