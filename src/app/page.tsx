@@ -8,7 +8,7 @@ import EventVenue from "./components/PageComponents/EventVenue/EventVenue";
 import Hotels from "./components/PageComponents/Hotels.tsx/Hotels";
 import organizerImage from "public/img/buplogo.png";
 import technicalSponsorImage from "public/img/ieee.png";
-import ContactForm from "./components/common/ContactForm/ContactForm";
+import ContactForm from "./components/PageComponents/ContactForm/ContactForm";
 export default function Home() {
   return (
     <>

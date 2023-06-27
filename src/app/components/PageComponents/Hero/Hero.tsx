@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 import Link from "next/link";
+import Countdown from "../Countdown/Countdown";
 
 const Hero = () => {
   return (
@@ -14,10 +15,11 @@ const Hero = () => {
           </p>
           <p className="mb-5 text-lg md:text-2xl">ON</p>
           <p className="mb-5 text-xl md:text-3xl">INFORMATION AND COMMUNICATION TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT</p>
-          <p className="mb-5 text-lg md:text-2xl">14-16 September, 2023, Bangladesh University of Professionals</p>
+          <p className="mb-5 text-lg md:text-2xl">21-23 September, 2023, Bangladesh University of Professionals</p>
           <button className="btn btn-primary">
             <Link href={"/#description"}>About The Event</Link>
           </button>
+          <Countdown className="md:absolute md:top-0 md:right-2" caption="Conference Starts In" />
         </div>
       </div>
     </section>

@@ -33,7 +33,7 @@ const Footer = () => {
           <p>
             Department of ICT, BUP
             <br />
-            Designed by{" "}
+            Developed by{" "}
             <Link href="https://www.facebook.com/Moheb619" className="text-red-500 hover:underline hover:text-red-900">
               Moheb
             </Link>

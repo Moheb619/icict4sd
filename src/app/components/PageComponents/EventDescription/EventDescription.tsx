@@ -19,7 +19,7 @@ const EventDescription = () => {
         </div>
         <div className="w-full md:w-1/4 mt-8 md:mt-0 md:pl-8">
           <h3 className="text-2xl md:text-3xl font-bold">When</h3>
-          <p className="mt-2">14-16 September, 2023</p>
+          <p className="mt-2">21-23 September, 2023</p>
         </div>
       </div>
     </section>
