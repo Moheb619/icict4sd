@@ -1,3 +1,3 @@
 ## Live Website
 
-[ICICT4SD](https://www.icict4sd.vercel.app)
+[ICICT4SD](https://icict4sd.vercel.app)
