@@ -1,0 +1,98 @@
+"use client";
+import { Contact } from "@prisma/client";
+import axios from "axios";
+import { SyntheticEvent, useEffect, useMemo, useState } from "react";
+import { AiFillDelete } from "react-icons/ai";
+const UserMessages = () => {
+  //   get all contact from db using axios
+  const [contacts, setContacts] = useState([]);
+
+  const fetchContacts = async () => {
+    try {
+      const res = await axios.get("/api/contacts");
+      setContacts(res.data.contacts);
+    } catch (error) {
+      console.error("Error fetching contacts:", error);
+    }
+  };
+  useEffect(() => {
+    fetchContacts();
+  }, []);
+  const handleStatusChange = async (event: React.ChangeEvent<HTMLSelectElement>, contactId: string, newStatus: string) => {
+    try {
+      event.target.classList.remove("bg-green-400", "bg-violet-600");
+      event.target.classList.toggle(`${newStatus === "Checked" ? "bg-green-400" : "bg-violet-600"}`);
+      const res = await axios.put(`/api/contacts/${contactId}`, { markedAsOkay: newStatus === "Checked" ? true : false });
+      fetchContacts();
+    } catch (error) {
+      console.error("Error updating contact status:", error);
+    }
+  };
+
+  const handleDelete = async (contactId: number) => {
+    const element = document.getElementById(contactId.toString());
+    if (element) element.classList.add("hidden");
+    await axios.delete(`/api/contacts/${contactId}`);
+    fetchContacts();
+  };
+  return (
+    <div className="container p-2 mx-auto sm:p-4 text-gray-100">
+      <h2 className="mb-4 text-2xl font-semibold leadi text-black text-center">Messages</h2>
+      <div className="overflow-x-auto">
+        <table className="min-w-full text-xs">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col className="w-24" />
+          </colgroup>
+          <thead className="bg-gray-700">
+            <tr className="text-left">
+              <th className="p-3">Id</th>
+              <th className="p-3">Full Name</th>
+              <th className="p-3">Email</th>
+              <th className="p-3">Message</th>
+              <th className="p-3">Issued</th>
+              <th className="p-3">Status</th>
+              <th className="p-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contacts.map((contact: any) => (
+              <tr key={contact.id} id={contact.id} className="border-b border-opacity-20 border-gray-700 bg-gray-900">
+                <td className="p-3">{contact.id}</td>
+                <td className="p-3">{contact.fullname}</td>
+                <td className="p-3">{contact.email}</td>
+                <td className="p-3">{contact.message}</td>
+                <td className="p-3">{contact.createdAt}</td>
+                <td className="p-3">
+                  <select
+                    defaultValue={contact.markedAsOkay ? "Checked" : "Pending"}
+                    className={`text-black px-3 py-1 font-semibold rounded-md ${contact.markedAsOkay ? "bg-green-400" : "bg-violet-600"}`}
+                    onChange={(e) => handleStatusChange(e, contact.id, e.target.value)}
+                  >
+                    <option className="bg-white text-black" value="Checked">
+                      Checked
+                    </option>
+                    <option className="bg-white text-black" value="Pending">
+                      Pending
+                    </option>
+                  </select>
+                </td>
+                <td className="p-3">
+                  <button className="px-3 py-1" onClick={(e) => handleDelete(contact.id)}>
+                    <AiFillDelete className="text-red-600 text-2xl" />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default UserMessages;

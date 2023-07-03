@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const contacts = await prisma.contact.findMany();
+    const contacts = await prisma.contact.findMany({});
     return NextResponse.json(
       {
         contacts,
@@ -29,6 +29,7 @@ export async function POST(req: Request) {
         fullname: body.fullname,
         email: body.email,
         message: body.message,
+        markedAsOkay: false,
       },
     });
     return NextResponse.json(

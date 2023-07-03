@@ -1,67 +1,36 @@
 "use client";
 import Image from "next/image";
 import bupLogo from "public/img/buplogo.png";
-import { SyntheticEvent, useRef, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+// Form input value's types
+type Inputs = {
+  fullname: string;
+  email: string;
+  message: string;
+};
 
 const ContactForm = () => {
-  // Form field value
-  const [fullname, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  // Error Message
-  const [fullnameerror, setFullNameError] = useState("");
-  const [emailerror, setEmailError] = useState("");
-  const [messageerror, setMessageError] = useState("");
-
-  // Input ref
-  const fullnameInputRef = useRef<HTMLInputElement>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
-  const messageInputRef = useRef<HTMLTextAreaElement>(null);
-
-  const handleSubmit = async (event: SyntheticEvent) => {
-    event.preventDefault();
-    setFullName(fullnameInputRef.current?.value ? fullnameInputRef.current.value : "");
-    setFullName(emailInputRef.current?.value ? emailInputRef.current.value : "");
-    setFullName(messageInputRef.current?.value ? messageInputRef.current.value : "");
-
-    const formData = {
-      fullname,
-      email,
-      message,
-    };
-    // Validate the form
-    if (fullname === "" || email === "" || message === "") {
-      if (fullname === "") {
-        setFullNameError("Full name must be filled");
-      }
-      if (email === "") {
-        setEmailError("Email must be filled");
-      }
-      if (message === "") {
-        setMessageError("Message must be filled");
-      }
-      return;
-    }
-    if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
-      setEmailError("Email must be in a valid format.");
-      return;
-    }
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     try {
-      const response = await axios.post("/api/contacts", formData, { headers: { "Content-Type": "application/json" } });
-      setFullName("");
-      setEmail("");
-      setMessage("");
-      fullnameInputRef.current!.value = "";
-      emailInputRef.current!.value = "";
-      messageInputRef.current!.value = "";
-
-      toast.info(response.data.message);
-    } catch (error) {
-      alert("Something went wrong. Please try again later.");
+      const res = axios.post("api/contacts", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      reset();
+      toast.info("Form Submitted Successfully");
+    } catch (error: any) {
+      toast.info("Form Invalid");
     }
   };
   return (
@@ -81,23 +50,11 @@ const ContactForm = () => {
         </div>
         <Image src={bupLogo} alt="Bup Logo" className="p-6 h-[6rem] mx-auto md:mx-0 w-fit md:h-[10rem] md:w-[35%]" />
       </div>
-      <form className="space-y-6" onSubmit={handleSubmit}>
+      <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label className="text-sm">Full name</label>
-          <input
-            id="full_name"
-            type="text"
-            placeholder=""
-            ref={fullnameInputRef}
-            className="w-full p-3 rounded bg-gray-200"
-            onChange={(e) => {
-              setFullName(e.target.value);
-              if (fullname !== "") {
-                setFullNameError("");
-              }
-            }}
-          />
-          <p className="text-red-600 text-sm">{fullnameerror}</p>
+          <input id="full_name" type="text" className="w-full p-3 rounded bg-gray-200" {...register("fullname", { required: "Full Name is required" })} />
+          {errors.fullname && <p className="text-red-600 text-sm">{errors.fullname?.message}</p>}
         </div>
         <div>
           <label className="text-sm">Email</label>
@@ -105,30 +62,14 @@ const ContactForm = () => {
             id="email"
             type="email"
             className="w-full p-3 rounded bg-gray-200"
-            ref={emailInputRef}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              if (email !== "" && email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
-                setEmailError("");
-              }
-            }}
+            {...register("email", { required: "Email is required", pattern: { value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, message: "Invalid Email" } })}
           />
-          <p className="text-red-600 text-sm">{emailerror}</p>
+          {errors.email && <p className="text-red-600 text-sm">{errors.email?.message}</p>}
         </div>
         <div>
           <label className="text-sm">Message</label>
-          <textarea
-            id="message"
-            className="w-full p-3 rounded bg-gray-200"
-            ref={messageInputRef}
-            onChange={(e) => {
-              setMessage(e.target.value);
-              if (message !== "") {
-                setMessageError("");
-              }
-            }}
-          ></textarea>
-          <p className="text-red-600 text-sm">{messageerror}</p>
+          <textarea id="message" className="w-full p-3 rounded bg-gray-200" {...register("message", { required: "Message is required" })}></textarea>
+          {errors.message && <p className="text-red-600 text-sm">{errors.message?.message}</p>}
         </div>
         <button type="submit" className="w-full p-3 text-sm font-bold tracki uppercase rounded bg-black text-white">
           Send Message

@@ -2,7 +2,9 @@
 import { useState } from "react";
 import styles from "./Nav.module.scss";
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 const Nav = () => {
+  const session = useSession();
   const [activeSubmenuIndex, setActiveSubmenuIndex] = useState<Number | null>(null);
   const handleSubmenuOpen = (index: Number) => {
     setActiveSubmenuIndex(index);
@@ -20,9 +22,6 @@ const Nav = () => {
             </svg>
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72 text-black lg:hidden">
-            <li>
-              <Link href={"/"}>Home</Link>
-            </li>
             <li>
               <Link href={"/#description"}>About</Link>
             </li>
@@ -90,11 +89,6 @@ const Nav = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link href={"/"} className={styles.menu_item}>
-              Home
-            </Link>
-          </li>
           <li>
             <Link href={"/#description"} className={styles.menu_item}>
               About
@@ -165,16 +159,32 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link href={"//#contact"} className={styles.menu_item}>
+            <Link href={"/#contact"} className={styles.menu_item}>
               Contact
             </Link>
           </li>
+          {session.status === "authenticated" && (
+            <>
+              <li>
+                <Link href={"/UserMessages"} className={styles.menu_item}>
+                  User Message
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
-      <div className="navbar-end flex flex-col items-center md:flex-row md:items-center pl-[4.8rem]">
-        <Link href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"} className="btn bg-red-600 text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto">
+      <div className="navbar-end flex flex-row items-center md:flex-row md:items-center pl-[4.8rem]">
+        <Link href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"} className="btn bg-green-800  text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto mx-1">
           Submit Paper
         </Link>
+        {session.status === "authenticated" && (
+          <>
+            <button onClick={() => signOut()} className="btn bg-red-500 text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto mx-1">
+              Logout
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import MoveToTopButton from "./components/common/MoveToTopButton/MoveToTopButton
 import Nav from "./components/common/Nav/Nav";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Provider from "./context/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,10 +16,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav />
-        {children}
-        <Footer />
-        <MoveToTopButton />
+        <Provider>
+          <Nav />
+          {children}
+          <Footer />
+          <MoveToTopButton />
+        </Provider>
       </body>
     </html>
   );
