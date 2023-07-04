@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./Nav.module.scss";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
+import { RiAdminFill } from "react-icons/ri";
 const Nav = () => {
   const session = useSession();
   const [activeSubmenuIndex, setActiveSubmenuIndex] = useState<Number | null>(null);
@@ -80,6 +81,16 @@ const Nav = () => {
             <li>
               <Link href={"/#contact"}>Contact</Link>
             </li>
+            {session.status === "authenticated" && (
+              <>
+                <li>
+                  <Link href={"/UserMessages"}>
+                    <RiAdminFill />
+                    User Message
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 
@@ -167,6 +178,7 @@ const Nav = () => {
             <>
               <li>
                 <Link href={"/UserMessages"} className={styles.menu_item}>
+                  <RiAdminFill />
                   User Message
                 </Link>
               </li>

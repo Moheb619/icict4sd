@@ -1,8 +1,9 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { signIn, useSession } from "next-auth/react";
-import { toast } from "react-toastify";
-import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 type Inputs = {
   email: string;
@@ -10,13 +11,21 @@ type Inputs = {
 };
 
 const Admin = () => {
+  const [toastMessage, setToastMessage] = useState<String>("");
   const session = useSession();
   const router = useRouter();
   useEffect(() => {
-    if (session?.status === "authenticated") {
+    if (toastMessage === "Logged in successfully!" && session.status === "authenticated") {
+      toast.success(toastMessage + " Redirecting to HOMEPAGE");
+      setTimeout(function () {
+        router.push("/");
+      }, 1500);
+    } else if ((toastMessage === "Invalid Credentials" && session.status === "unauthenticated") || !session.status) {
+      toast.error(toastMessage);
+    } else if (toastMessage === "" && session.status === "authenticated") {
       router.push("/");
     }
-  }, [session, router]);
+  }, [session, router, toastMessage]);
   const {
     register,
     formState: { errors },
@@ -30,10 +39,10 @@ const Admin = () => {
       redirect: false,
     }).then((callback) => {
       if (callback?.error) {
-        toast.error("Invalid Credentials");
+        setToastMessage("Invalid Credentials");
       }
       if (callback?.ok && !callback?.error) {
-        toast.success("Logged in successfully!");
+        setToastMessage("Logged in successfully!");
       }
     });
   };
@@ -74,6 +83,7 @@ const Admin = () => {
           </div>
         </form>
       </div>
+      <ToastContainer position="top-right" autoClose={1000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
     </section>
   );
 };
