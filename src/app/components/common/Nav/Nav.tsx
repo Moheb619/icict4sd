@@ -45,6 +45,9 @@ const Nav = () => {
                   <Link href={"/InternationalAdvisoryCommittee"}>International Advisory Committee</Link>
                 </li>
                 <li>
+                  <Link href={"/NationalAdvisoryCommittee"}>National Advisory Committee</Link>
+                </li>
+                <li>
                   <Link href={"/TechnicalCommittee"}>Technical Program Committee</Link>
                 </li>
                 <li>
@@ -127,6 +130,9 @@ const Nav = () => {
                 </li>
                 <li>
                   <Link href={"/InternationalAdvisoryCommittee"}>International Advisory Committee</Link>
+                </li>
+                <li>
+                  <Link href={"/NationalAdvisoryCommittee"}>National Advisory Committee</Link>
                 </li>
                 <li>
                   <Link href={"/TechnicalCommittee"}>Technical Program Committee</Link>
