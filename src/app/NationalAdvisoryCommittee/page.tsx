@@ -1,5 +1,27 @@
 import styles from "./NationalAdvisoryCommittee.module.scss";
 
+const NationalAdvisoryCommitteList = [
+  "Dr. Satya Prasad Majumder, VC, BUET",
+  "Dr. Md. Nurunnabi Mollah, Professor, EEE, KUET",
+  "Dr. Md. Mostofa Akbar, CSE, BUET",
+  "Dr. Md. Sazzad Hossain, Professor, CSE, ULAB, Member (UGC)",
+  "Dr. A K M Nazrul Islam, Professor, EECE, MIST",
+  "Dr. Md. Mahbubur Rahman, Professor, CSE, MIST",
+  "Dr. Md. Abdur Rahman, Professor, EEE, AIUB",
+  "Dr. M. Shamim Kaiser, Professor, IIT, JU",
+  "Dr. Mohammad Abu Yousuf, Professor, IIT, JU",
+  "Dr. M.M.A. Hashem, Professor, CSE, KUET",
+  "Dr. Tabin Hasan, Professor, CS, AIUB",
+  "Dr. Mohammad Kaykobad,Distinguished Professor Department of CSE, Brac University",
+  "Engr. Md. Nurul Huda, President, Institution of Engineers, Bangladesh (IEB)",
+  "Md. Shamsul Arefin, Secretary, ICT Division",
+  "Ziaul Hasan NDC, Secretary, Ministry of Science & Technology",
+  "Dr. Abdus Samad, Professor, EECE, MIST",
+  "Dr. Risala Tasin Khan Professor, IIT, JU",
+  "Dr. Samia Subrina Professor Department of Electrical and Electronic Engineering, BUET",
+  "Dr. Pran Kanai Saha,Professor Department of Electrical and Electronic Engineering, BUET",
+];
+
 const NationalAdvisoryCommittee = () => {
   return (
     <div className="flex flex-col items-center p-4 md:p-12">
@@ -11,48 +33,12 @@ const NationalAdvisoryCommittee = () => {
               <th>Serial Number</th>
               <th>Details</th>
             </tr>
-            <tr className={`${styles.national_advisory_table_row}`}>
-              <td>1</td>
-              <td>
-                Prof. Dr. Sazzad Hosssain
-                <br />
-                Member, UGC, Bangladesh
-              </td>
-            </tr>
-            <tr className={`${styles.national_advisory_table_row}`}>
-              <td>2</td>
-              <td>
-                Dr. Risala Tasin Khan
-                <br />
-                Professor, Institute of Information Technology
-              </td>
-            </tr>
-            <tr className={`${styles.national_advisory_table_row}`}>
-              <td>3</td>
-              <td>
-                Dr. Samia Subrina,Professor
-                <br />
-                Department of Electrical and Electronic Engineering, BUET
-              </td>
-            </tr>
-            <tr className={`${styles.national_advisory_table_row}`}>
-              <td>4</td>
-              <td>
-                Mohammad Kaykobad, PhD
-                <br />
-                Distinguished Professor
-                <br />
-                Department of CSE, Brac University
-              </td>
-            </tr>
-            <tr className={`${styles.national_advisory_table_row}`}>
-              <td>5</td>
-              <td>
-                Dr. Pran Kanai Saha,Professor
-                <br />
-                Department of Electrical and Electronic Engineering, BUET
-              </td>
-            </tr>
+            {NationalAdvisoryCommitteList.map((member, index) => (
+              <tr key={index} className={`${styles.national_advisory_table_row}`}>
+                <td>{index + 1}</td>
+                <td>{member}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
