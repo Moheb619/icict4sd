@@ -19,7 +19,7 @@ const NationalAdvisoryCommitteList = [
   "Dr. Abdus Samad, Professor, EECE, MIST",
   "Dr. Risala Tasin Khan Professor, IIT, JU",
   "Dr. Samia Subrina Professor Department of Electrical and Electronic Engineering, BUET",
-  "Dr. Pran Kanai Saha,Professor Department of Electrical and Electronic Engineering, BUET",
+  "Prof. Dr. Dip Nandi, Associate Dean, Faculty of Science and Technology, American International University-Bangladesh (AIUB)",
 ];
 
 const NationalAdvisoryCommittee = () => {
