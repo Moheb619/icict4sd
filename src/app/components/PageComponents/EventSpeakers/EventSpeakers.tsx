@@ -1,10 +1,10 @@
 import ImageCard from "../../common/ImageCard/ImageCard";
-import DrSadidHasan from "public/img/keynote/Dr. Sadid Hasan.jpg";
-import DrSatyaPrasadMajumder from "public/img/keynote/Dr. Satya Prasad Majumder.jpg";
+import DavidBrown from "public/img/keynote/David Brown.png";
+import KamalZuhairiBinZamli from "public/img/keynote/Kamal Zuhairi Bin Zamli.png";
 import dummyImages from "public/img/dummyImages/dummy-profile-pic-male.jpg";
 const keynoteSpeakers = [
-  { name: "Dr. Sadid Hasan", bio: "AI Lead at Microsoft Cambridge, MA, USA", url: DrSadidHasan },
-  { name: "Dr. Satya Prasad Majumder", bio: "VC, BUET", url: DrSatyaPrasadMajumder },
+  { name: "David Brown", bio: "Professor in Interactive Systems for Social Inclusion, School of Science & Technology, Nottingham Trent University", url: DavidBrown },
+  { name: "Professor Ts. Dr. Kamal Zuhairi Bin Zamli", bio: "Deputy Vice-Chancellor (Research & Innovation), University of Malaysia Pahang", url: KamalZuhairiBinZamli },
 ];
 
 const EventSpeakers = () => {
