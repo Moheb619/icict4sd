@@ -1,6 +1,6 @@
 import ImageCard from "../../common/ImageCard/ImageCard";
-import DavidBrown from "public/img/keynote/David Brown.png";
-import KamalZuhairiBinZamli from "public/img/keynote/Kamal Zuhairi Bin Zamli.png";
+import DavidBrown from "public/img/keynote/David Brown2.png";
+import KamalZuhairiBinZamli from "public/img/keynote/Kamal Zuhairi Bin Zamli2.png";
 import dummyImages from "public/img/dummyImages/dummy-profile-pic-male.jpg";
 const keynoteSpeakers = [
   { name: "David Brown", bio: "Professor in Interactive Systems for Social Inclusion, School of Science & Technology, Nottingham Trent University", url: DavidBrown },
