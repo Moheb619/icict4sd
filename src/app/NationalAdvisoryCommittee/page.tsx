@@ -1,10 +1,13 @@
 import styles from "./NationalAdvisoryCommittee.module.scss";
 
 const NationalAdvisoryCommitteList = [
+  "Dr. Md. Sazzad Hossain, Professor, CSE, ULAB, Member (UGC)",
+  "Md. Shamsul Arefin, Secretary, ICT Division",
+  "Ziaul Hasan NDC, Secretary, Ministry of Science & Technology",
   "Dr. Satya Prasad Majumder, VC, BUET",
+  "Engr. Md. Nurul Huda, President, Institution of Engineers, Bangladesh (IEB)",
   "Dr. Md. Nurunnabi Mollah, Professor, EEE, KUET",
   "Dr. Md. Mostofa Akbar, CSE, BUET",
-  "Dr. Md. Sazzad Hossain, Professor, CSE, ULAB, Member (UGC)",
   "Dr. A K M Nazrul Islam, Professor, EECE, MIST",
   "Dr. Md. Mahbubur Rahman, Professor, CSE, MIST",
   "Dr. Md. Abdur Rahman, Professor, EEE, AIUB",
@@ -13,9 +16,6 @@ const NationalAdvisoryCommitteList = [
   "Dr. M.M.A. Hashem, Professor, CSE, KUET",
   "Dr. Tabin Hasan, Professor, CS, AIUB",
   "Dr. Mohammad Kaykobad,Distinguished Professor Department of CSE, Brac University",
-  "Engr. Md. Nurul Huda, President, Institution of Engineers, Bangladesh (IEB)",
-  "Md. Shamsul Arefin, Secretary, ICT Division",
-  "Ziaul Hasan NDC, Secretary, Ministry of Science & Technology",
   "Dr. Abdus Samad, Professor, EECE, MIST",
   "Dr. Risala Tasin Khan Professor, IIT, JU",
   "Dr. Samia Subrina Professor Department of Electrical and Electronic Engineering, BUET",
