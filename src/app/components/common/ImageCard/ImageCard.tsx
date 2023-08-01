@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 interface ImageCardProps {
-  title: string;
+  title?: string;
   name: string;
   bio: string;
   url: StaticImageData;
