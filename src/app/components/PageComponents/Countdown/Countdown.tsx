@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import BlinkingText from "../../common/BlinkingText/BlinkingText";
 
 interface CountdownProps {
   className?: string;
@@ -59,6 +60,7 @@ const Countdown: React.FC<CountdownProps> = ({ className, caption }) => {
         <span className="bg-gray-800 mx-1 p-1 rounded-lg">{minute}m </span>
         <span className="bg-gray-800 mx-1 p-1 rounded-lg">{second}s</span>
       </div>
+      <BlinkingText />
     </div>
   );
 };

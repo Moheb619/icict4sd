@@ -11,6 +11,7 @@ const InternationalAdvisoryCommitteList = [
   "Dr. Mufti Mahmud, Associate Professor, Department of Computer Science Nottingham Trent University, UK",
   "Dr M Hasan Shaheed, Phd, School of Engineering and Materials Science Queen Mary University of London London, UK",
   "Professor Mike Hinchey, PhD, Software Engineering University of Limerick Ireland",
+  "Professor B. M. Azizur Rahman,School of Science & Technology, Department of Engineering, City University, London ",
 ];
 
 const InternationalAdvisoryCommittee = () => {
