@@ -36,21 +36,27 @@ const EventSchedule = () => {
               </tr>
               <tr>
                 <td>4</td>
-                <td>Keynote Session 01</td>
+                <td>Opening of Industrial Exhibition</td>
                 <td>1 hr</td>
                 <td>1100 - 1200 hrs</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>Slot for IEEE Student Branch</td>
-                <td>1 hr 30 mins</td>
-                <td>1200 - 1330 hrs</td>
+                <td>Keynote Session 01</td>
+                <td>1 hr</td>
+                <td>1200 - 1300 hrs</td>
               </tr>
               <tr>
                 <td>6</td>
                 <td>Lunch</td>
-                <td>30 mins</td>
-                <td>1330 - 1400 hrs</td>
+                <td>1 hr</td>
+                <td>1300 - 1400 hrs</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Slot for IEEE Student Branch</td>
+                <td>1 hr</td>
+                <td>1400 - 1500 hrs</td>
               </tr>
             </tbody>
           </table>
@@ -100,23 +106,23 @@ const EventSchedule = () => {
               </tr>
               <tr>
                 <td>12</td>
-                <td>
-                  Technical Session: Slot 02 <small className="text-danger">(4 parallel sessions, each session 06 papers , 20 min for each presentation, 06*20 min)</small>{" "}
-                </td>
-                <td>2 hrs</td>
+                <td>Launch and Prayer Break</td>
+                <td>1 hr</td>
                 <td>1230 - 1430 hrs</td>
               </tr>
               <tr>
                 <td>13</td>
-                <td>Lunch</td>
-                <td>30 mins</td>
-                <td>1430 - 1500 hrs</td>
+                <td>Keynote Session 03</td>
+                <td>1 hrs</td>
+                <td>1430 - 1530 hrs</td>
               </tr>
               <tr>
                 <td>14</td>
-                <td>Keynote Session 03</td>
-                <td>1 hrs</td>
-                <td>1500 - 1600 hrs</td>
+                <td>
+                  Technical Session: Slot 02 <small className="text-danger">(4 parallel sessions, each session 06 papers , 20 min for each presentation, 06*20 min)</small>{" "}
+                </td>
+                <td>2 hrs</td>
+                <td>1530 - 1730 hrs</td>
               </tr>
             </tbody>
           </table>
@@ -175,8 +181,8 @@ const EventSchedule = () => {
               <tr>
                 <td>21</td>
                 <td>Invited Talk</td>
-                <td>30 mins</td>
-                <td>1400 - 1430 hrs</td>
+                <td>50 mins</td>
+                <td>1400 - 1450 hrs</td>
               </tr>
               <tr>
                 <td>22</td>
@@ -184,27 +190,13 @@ const EventSchedule = () => {
                   Technical Session: Slot 05 <small className="text-danger">(4 parallel sessions, each session 06 papers , 20 min for each presentation, 06*20 min)</small>{" "}
                 </td>
                 <td>2 hrs</td>
-                <td>1430 - 1630 hrs</td>
+                <td>1500 - 1700 hrs</td>
               </tr>
               <tr>
                 <td>23</td>
-                <td>
-                  Closing Session with Prize Distributions <small>(Can be arranged outside BUP)</small>
-                </td>
-                <td>1 hrs 30 mins</td>
-                <td>1700 hrs</td>
-              </tr>
-              <tr>
-                <td>24</td>
-                <td>Cultural Night</td>
+                <td>Closing Session with Prize Distributions & Dinner</td>
                 <td>2 hrs</td>
-                <td>1830-2030 hrs</td>
-              </tr>
-              <tr>
-                <td>25</td>
-                <td>Gala Dinner</td>
-                <td>-</td>
-                <td>2030 hrs</td>
+                <td>1900 - 2100 hrs</td>
               </tr>
             </tbody>
           </table>

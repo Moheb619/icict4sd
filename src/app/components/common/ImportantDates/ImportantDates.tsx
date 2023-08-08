@@ -11,6 +11,12 @@ const ImportantDates = () => {
           <table className={`border-separate border border-slate-400 mx-auto text-lg md:text-xl ${styles.important_dates_table}`}>
             <tbody>
               <tr className={`${styles.important_dates_table_tr}`}>
+                <td className="px-2 md:px-4 py-2 md:py-3">Circulation of Call for Paper</td>
+                <td className="px-2 md:px-4 py-2 md:py-3">
+                  <strong>15 Mar, 2023</strong>
+                </td>
+              </tr>
+              <tr className={`${styles.important_dates_table_tr}`}>
                 <td className="px-2 md:px-4 py-2 md:py-3">
                   Paper Submission Deadline <strong className="text-success">(Final)</strong>
                 </td>
