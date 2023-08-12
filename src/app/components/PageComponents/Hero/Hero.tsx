@@ -2,14 +2,14 @@ import Image from "next/image";
 import styles from "./Hero.module.scss";
 import Link from "next/link";
 import Countdown from "../Countdown/Countdown";
-
+import ConferenceLogo from "public/img/conf/Conferece_logo.png";
 const Hero = () => {
   return (
     <section id="hero" className="hero min-h-screen relative bg-[url('/img/intro-bg.jpg')]">
       <div className="absolute bg-[#060C22CC] h-full w-full"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Image src="/img/conf/Conferece_logo.png" alt="logo" width={200} height={200} className="mb-5 mx-auto max-w-[200px]" />
+          <Image src={ConferenceLogo} alt="logo" className="mb-5 mx-auto max-w-[200px]" />
           <p className="mb-5 text-3xl md:text-5xl text-red-700 font-bold">
             2<sup>ND</sup> INTERNATIONAL CONFERENCE
           </p>

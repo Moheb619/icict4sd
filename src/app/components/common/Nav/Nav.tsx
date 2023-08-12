@@ -192,18 +192,23 @@ const Nav = () => {
           )}
         </ul>
       </div>
-      <div className="navbar-end flex flex-row items-center md:flex-row md:items-center pl-[4.8rem]">
-        <p className="font-bold"> {session.data?.user.name ? "Hello " + session.data?.user.name : ""}</p>
-        <Link href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"} className="btn bg-green-800  text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto mx-1">
-          Submit Paper
-        </Link>
-        {session.status === "authenticated" && (
-          <>
-            <button onClick={() => signOut()} className="btn bg-red-500 text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto mx-1">
-              Logout
-            </button>
-          </>
-        )}
+      <div className="navbar-end flex flex-col items-center md:flex-col md:items-center">
+        <div className="font-bold"> {session.data?.user.name ? "Hello " + session.data?.user.name : ""}</div>
+        <div className="flex flex-row">
+          <Link
+            href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold  h-[2rem] px-2 rounded-full mx-1 text-xs flex items-center justify-center"
+          >
+            <span style={{ textShadow: "1px 1px 5px black" }}>Submit Paper</span>
+          </Link>
+          {session.status === "authenticated" && (
+            <>
+              <button onClick={() => signOut()} className="bg-red-500 hover:bg-red-700 text-white font-bold  h-[2rem] px-2 rounded-full mx-1 flex items-center justify-center text-xs">
+                <span style={{ textShadow: "1px 1px 5px black" }}>Logout</span>
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
