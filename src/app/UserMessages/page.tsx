@@ -9,6 +9,11 @@ const UserMessages = () => {
   const [contacts, setContacts] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<Boolean>(true);
 
+  const formatDate = (dateString: string) => {
+    const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+
   const fetchContacts = async () => {
     try {
       const res = await axios.get("/api/contacts");
@@ -73,7 +78,7 @@ const UserMessages = () => {
                   <td className="p-3">{contact.fullname}</td>
                   <td className="p-3">{contact.email}</td>
                   <td className="p-3">{contact.message}</td>
-                  <td className="p-3">{contact.createdAt}</td>
+                  <td className="p-3">{formatDate(contact.createdAt)}</td>
                   <td className="p-3">
                     <select
                       defaultValue={contact.markedAsOkay ? "Checked" : "Pending"}
