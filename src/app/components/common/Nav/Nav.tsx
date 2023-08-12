@@ -180,7 +180,7 @@ const Nav = () => {
               Contact
             </Link>
           </li>
-          {session.status === "authenticated" && (
+          {session.status === "authenticated" && session.data.user.role === "ADMIN" && (
             <>
               <li>
                 <Link href={"/UserMessages"} className={styles.menu_item}>
@@ -193,6 +193,7 @@ const Nav = () => {
         </ul>
       </div>
       <div className="navbar-end flex flex-row items-center md:flex-row md:items-center pl-[4.8rem]">
+        <p className="font-bold"> {session.data?.user.name ? "Hello " + session.data?.user.name : ""}</p>
         <Link href={"https://easychair.org/account/signin?l=eYQ3YqpXQbsEZ9w5parN3t"} className="btn bg-green-800  text-white hover:scale-105 mb-2 md:mb-0 md:ml-4 w-[4rem] md:w-auto mx-1">
           Submit Paper
         </Link>

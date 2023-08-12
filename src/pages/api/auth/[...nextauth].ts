@@ -35,6 +35,38 @@ export const authOptions: AuthOptions = {
     }),
   ],
 
+  callbacks: {
+    async jwt({ token, user }) {
+      const dbUser = await prisma.user.findFirst({
+        where: {
+          email: token.email,
+        },
+      });
+      if (dbUser?.id) {
+        token.id = dbUser?.id;
+      }
+      if (dbUser?.name) {
+        token.name = dbUser?.name;
+      }
+      if (dbUser?.email) {
+        token.email = dbUser?.email;
+      }
+      if (dbUser?.role) {
+        token.role = dbUser?.role;
+      }
+
+      return token;
+    },
+
+    async session({ session, token }) {
+      session.user.id = token.id;
+      session.user.name = token.name;
+      session.user.email = token.email;
+      session.user.role = token.role;
+      return session;
+    },
+  },
+
   debug: process.env.NODE_ENV === "development",
   session: {
     strategy: "jwt",
